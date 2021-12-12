@@ -14,4 +14,12 @@ public class GlobalExceptionHandler {
         e.printStackTrace();
         return Result.error();
     }
+
+    @ExceptionHandler(ArithmeticException.class)
+    @ResponseBody
+    public Result error(ArithmeticException e){
+        e.printStackTrace();
+        return Result.error().message("ArithmeticException");
+    }
+
 }
